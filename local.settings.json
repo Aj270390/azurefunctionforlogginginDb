@@ -1,13 +1,7 @@
 {
-  "IsEncrypted": false,
-  "Values": {
-    "app-insights-endpoint": "https://api.applicationinsights.io/v1/apps/",
-    "sims.school-student.insights.setting.appinsights-id": "65b0838b-8e4f-4f77-9891-f1e379e639b7",
-    "sims.school-parent.insights.setting.appinsights-id": "e8a49aea-2b02-4077-a572-6a200493b873",
-    "sims.school-student.insights.setting.appinsights-key": "dys33h47mjut7ozwrq5txwo8cjzvn2wygfdxufja",
-    "sims.school-parent.insights.setting.appinsights-key": "ykr0vepczrt6urogubs2edmqpj5axuydguow1qjg",
-    "capita.product-analytics.appinsights.storage-account-connection-string": "DefaultEndpointsProtocol=https;AccountName=appinsightsstorageaj;AccountKey=4Nc0scxCZhkEKHOBwZmFF3/Vu0hP0szX+JW/ZMgh4Ld+aKOXKYHSTId1sT/xGrYKPn16OQX5cYBE81i7Riwz/A=="
-  }
+    "IsEncrypted": false,
+    "Values": {
+        "AzureWebJobsStorage": "UseDevelopmentStorage=false",
+        "AzureWebJobsDashboard": "UseDevelopmentStorage=false"
+    }
 }
-
-

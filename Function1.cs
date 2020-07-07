@@ -1,24 +1,15 @@
-using System;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
 using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Host;
+using Microsoft.ServiceBus.Messaging;
 
-namespace AzureFunctionAppInsights
+namespace FunctionApp2ServiceBus
 {
-    public static class Function1
+    public static class Function2
     {
-        [FunctionName("Function1")]
-        public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)]HttpRequestMessage req, TraceWriter log)
+        [FunctionName("Function2")]
+        public static void Run([ServiceBusTrigger("abc", "abcsub", AccessRights.Manage, Connection = "")]string mySbMsg, TraceWriter log)
         {
-            log.Info("C# HTTP trigger function processed a request.");
-            IUserAppInsightsDataService IUserAppInsightsDataService = new UserAppInsightsDataService();
-            Guid gd = new Guid("ad8c2f3e-72b9-4390-bfb1-09bb3619b9df");
-            await IUserAppInsightsDataService.GetActiveUsersCount(gd, "ALLPARENTS");
-            return  req.CreateResponse(HttpStatusCode.Accepted, "check on the browser");
+            log.Info($"C# ServiceBus topic trigger function processed message: {mySbMsg}");
         }
     }
 }
